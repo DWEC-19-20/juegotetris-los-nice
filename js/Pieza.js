@@ -14,6 +14,11 @@ class Pieza {
 
     constructor(tetromino, color, tablero) {
         // propiedades numeroForma, tetrominioActual, posición x e y en el canvas  	
+        this.tetromino=tetromino;
+        this.color=color;
+        this.tablero=tablero;
+
+    
     }
 
     // rota la piezaentre las distintas formas del tetrominio
@@ -22,7 +27,9 @@ class Pieza {
 
 
     // rellena el tetromino de la pieza con su color en el canvas
-    rellenar = (color) => {}
+    rellenar = (color) => {
+
+    }
 
     // dibuja el color de una pieza
     dibujar = () => {}
@@ -31,7 +38,10 @@ class Pieza {
     borrar = () => {}
 
     // mover abajo la pieza, si queda fijada, deberá obtener una nueva
-    moverAbajo = () => {}
+    moverAbajo = () => {
+
+        
+    }
 
     // mover derecha la pieza hasta chocar con la pared 
     moverDerecha = () => {}

@@ -1,7 +1,11 @@
 class Tablero {
     constructor(filas, columnas, tamañoCuadrado, ctx) {
-         // inicializa el tablero todos los elementos de color WHITE		
-    }
+         // inicializa el tablero todos los elementos de color WHITE
+                 this.filas=filas;
+                 this.columnas=columnas;
+                 this.tamañoCuadrado=tamañoCuadrado;
+                 this.ctx=ctx;
+}
 
     // Es vacio si tiene el color WHITE
     esVacio = (x, y) => {}
@@ -17,17 +21,25 @@ class Tablero {
     // dibujar en el canvas según los colores del tablaro
     dibujarTablero = () => {};
 
-    get filas() {}
+    get filas() {
+        return this.filas;
+    }
 
-    set filas(fila) {}
+    set filas(fila) {
+        this.filas=filas;
+    }
 
-    get columnas() {}
+    get columnas() {
+        return this.columnas;
+    }
 
-    set columnas(columna) {}
+    set columnas(columna) {
+        this.columnas=columnas;
+    }
 
     //Devuelve el color del tablero en la casilla indicada
     getCasilla = (f, c) => {
-
+        return 
     }
 
     //Cambiar el color del tablero en la casilla indicada
