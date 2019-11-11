@@ -11,8 +11,10 @@ class Juego {
     }
 
     // devuelve una pieza aleatoria
+    PIEZAS=[[Z, "red"],[S,"green"],[T,"cyan"],[O,"indigo"],[I,"blue"],[L,"purple"],[j,"orange"]];
     piezaAleatoria = () => {
-
+    let randomN=Math.floor(Math.random(0,6)*PIEZAS.length);
+    return new Pieza(PIEZAS[randomN][0], PIEZAS[randomN][1]);
     }
 
     get tablero() {
