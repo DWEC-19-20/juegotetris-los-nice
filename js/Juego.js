@@ -1,20 +1,20 @@
 class Juego {
 
     constructor(cvs) {
+
         this.ctx = cvs.getContext("2d");
         this._tablero = new Tablero(20, 10, 20, this.ctx);
         this._pieza = this.piezaAleatoria();
         this.gameOver = false;
         this._comenzarCaer = Date.now();
         this.score = 0;
-
     }
 
     // devuelve una pieza aleatoria
-    PIEZAS=[[Z, "red"],[S,"green"],[T,"cyan"],[O,"indigo"],[I,"blue"],[L,"purple"],[j,"orange"]];
     piezaAleatoria = () => {
-    let randomN=Math.floor(Math.random(0,6)*PIEZAS.length);
-    return new Pieza(PIEZAS[randomN][0], PIEZAS[randomN][1]);
+        let piezaR = Math.floor(Math.random() * PIEZAS.length);
+
+        return new Pieza(PIEZAS[piezaR][0], PIEZAS[piezaR][1], this.tablero);
     }
 
     get tablero() {
@@ -35,19 +35,23 @@ class Juego {
     set comenzarCaer(comenzarCaer) {
         this._comenzarCaer = comenzarCaer;
     }
+
+    
     caer = () => {
         let ahora = Date.now();
         let delta = ahora - this.comenzarCaer;
-        if (delta > 1000) {
+        if (delta > 400) {
             this.pieza.moverAbajo();
             this.comenzarCaer = Date.now();
         }
+
         if (!this.gameOver) {
             requestAnimationFrame(this.caer);
         }
     }
 
     control = (event) => {
+
         if (event.keyCode == 37) {
             this.pieza.moverIzquierda();
             this.comenzarCaer = Date.now();
@@ -59,6 +63,7 @@ class Juego {
             this.comenzarCaer = Date.now();
         } else if (event.keyCode == 40) {
             this.pieza.moverAbajo();
+            
         }
     }
 
